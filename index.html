@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--<link rel="stylesheet" href="style.css">-->
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>cl</title>
+    <style>
+      p.dotted {border-style: dotted;}
+    </style>
+  </head>
+  <body>
+
+
+    <div class="center">
+      
+      <h1 style="text-align: center;">Calulator</h1>
+    <input id="display"  onfocus=" clearinput()" type="number"  >
+  
+  <input id="oper" onkeypress="show()" onfocus="this.value=''" readonly>
+    <input id="display1" onclick="clearinput1()" type="number"onfocus="this.value=''">=
+    <input id="display2"  onchange="finalclear()" readonly onfocus="this.value=''">
+      <br>
+      <div class="btn-group" >
+    <button onclick="calul()">=</button>
+    <button onclick="addop('+'),b(), c()" id="plus" >+</button>
+    <button onclick="addop('-')" id="minus">-</button>
+    <button onclick="addop('*')" id="mul">*</button>
+    <button onclick="addop('/')" id="did">/</button>
+    <button onclick="location.reload()" >clear</button>
+  </div>
+            <p id="demo"></p>
+              <p id="demo2"></p>
+  
+            </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+   
+    <script>
+      
+      const ans=document.getElementById('display2')
+      const dis=document.getElementById('display')
+      const dis1=document.getElementById('display1')
+      const op=document.getElementById('oper');
+      const del=document.getElementById('delete');
+
+      function finalclear(value){
+        ans.value=''
+        dis.value=''
+        dis1.value=''
+
+      }
+      function clearinput1(value){
+        console.log("disply,display1 and answer input field cleared with onfocus()")
+          ans.value=''
+          //dis.value=''
+          //dis1.value=''
+      }
+     function clearinput(value){
+
+      console.log("disply,display1 and answer input field cleared with onfocus()")
+      ans.value=''
+      dis.value=''
+      dis1.value=''
+      document.getElementById('display1').onfocus.value=''
+      return value
+     }
+
+ 
+function operp(input){
+    op.value +=input;
+}
+function operm(input){
+    op.value +=input;
+}
+
+function b(x){
+  var x = document.getElementById("display").value;
+  console.log(parseInt(x));
+}
+
+function c(x1,a){
+  var x1 = document.getElementById("display1").value;
+  console.log(parseInt(x1));
+}
+function calul(x,x1,value){
+  const b1=NaN;
+  if(oper.value== '+'){
+  var x = parseInt(document.getElementById("display").value);
+  var x1 = parseInt(document.getElementById("display1").value);
+
+  console.log(x+x1)
+  
+  //document.querySelector('display2').value +=x+x1;
+  ans.value=x+x1;
+  //if(x+x1== b){
+    //document.getElementById('demo').innerHTML='Enter proper no:NAN error';
+    //console.log('err')
+
+  //  }
+  }else if(oper.value== '-'){
+    var x = parseInt(document.getElementById("display").value);
+    var x1 = parseInt(document.getElementById("display1").value);
+    ans.value=x-x1;
+  }else if(oper.value== '*'){
+    var x = parseInt(document.getElementById("display").value);
+    var x1 = parseInt(document.getElementById("display1").value);
+    
+    ans.value=x*x1;
+  }else{
+    var x = parseInt(document.getElementById("display").value);
+    var x1 = parseInt(document.getElementById("display1").value);
+
+    ans.value=x/x1;
+    if(x1== 0){
+      document.getElementById('demo').innerHTML="Error: divide by 0 error";
+      console.log('tet')
+    }
+    else{
+      ans.value=x/x1;
+    }
+  }
+      
+}
+function minus(a1,a2){
+  var x = parseInt(document.getElementById("display").value);
+  var x1 = parseInt(document.getElementById("display1").value);
+  ans.value=x-x1;
+}
+
+function mul(x,y){
+  var x=parseInt(document.getElementById("display").value)
+  var y=parseInt(document.getElementById("display1").value)
+  ans.value=x*y;
+}
+
+function div(x,y){
+  var x=parseInt(document.getElementById("display").value)
+  var y=parseInt(document.getElementById("display1").value)
+  ans.value=x/y;
+  clear()
+}
+
+function addop(input){
+let a;
+op.value +=input;
+}
+  function clear(a,b,sum,op){
+    ans.value='Reset'
+    
+  }
+    </script>
+  </body>
+</html>
+
+

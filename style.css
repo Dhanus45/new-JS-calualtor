@@ -1,0 +1,53 @@
+h1 {
+    color: red;
+  } 
+  
+  input{
+    color: brown;
+    background-color: rgb(255, 255, 255);
+  }
+  button{
+    color: rgb(5, 5, 5);
+    border-style: solid;
+    border-color: brown;
+  }
+
+  body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  }
+
+  .btn-group{
+    left:200px;
+    
+  }
+  .container {
+    margin: auto;
+    width: 60%;
+    border: 3px ;
+    padding: 10px;
+    text-align: center;
+  }
+
+.sp{
+  word-spacing: 50px;
+}
+  .card{
+    align-self: center;
+    background-color: aqua;
+  }
+
+  .center {
+    margin: auto;
+    width: 60%;
+    border: 3px ;
+    padding: 10px;
+    border-style: solid;
+    border-color: aliceblue;
+  }
+  p{
+    color: rgb(255, 254, 254);
+    
+    width: 60%;
+    text-size-adjust: 34px;
+  }
